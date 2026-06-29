@@ -13,8 +13,8 @@ public class DiscMapper {
         dto.setDiscTitle(disc.getDiscTitle());
         dto.setDiscDescription(disc.getDiscDescription());
         dto.setDiscValue(disc.getDiscValue());
-        dto.setDiscImg(dto.getDiscImg());
-        dto.setDiscDemoMsc(dto.getDiscDemoMsc());
+        dto.setDiscImage(disc.getDiscImage());
+        dto.setDiscDemoMusic(disc.getDiscDemoMusic());
         return dto;
     }
 
@@ -22,7 +22,7 @@ public class DiscMapper {
         DiscModel disc = new DiscModel();
         disc.setDiscTitle(request.getDiscTitle());
         disc.setDiscDescription(request.getDiscDescription());
-        disc.setDiscValue(request.getDiscPrice());
+        disc.setDiscValue(request.getDiscValue());
         disc.setDiscImage(request.getDiscImg());
         disc.setDiscDemoMusic(request.getDiscDemoMsc());
 
