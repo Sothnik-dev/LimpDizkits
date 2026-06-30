@@ -8,6 +8,8 @@ import com.github.sothnik_dev.limp_dizkits.repository.discRepository.DiscReposit
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -28,6 +30,12 @@ public class DiscServiceImpl implements  DiscService{
         DiscModel disc = discMapper.toEntity(request);
         discRepository.save(disc);
         return discMapper.toDto(disc);
+    }
+
+    @Override
+    public List<DiscDto> findAllDisc() {
+        List<DiscModel> list = discRepository.findAll().stream().toList();
+        return discMapper.toListDto(list);
     }
 
     @Override
